@@ -1,0 +1,39 @@
+#page{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    border: black 1px solid;
+}
+
+#main-section {
+    position: absolute;
+    border: black 1px solid;
+    top: 100px;
+    width: 50%;
+    align-content: center;
+    
+}
+
+button {
+    background-color: #0000ff;
+    color: #ffffff;
+    border-radius: 5%;
+    border-style: none;
+    width: fit-content;
+    font-size: 20px;
+    padding: 5px;
+}
+
+#scores {
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    border: black 1px solid;
+    
+}
+
+#time {
+    position: absolute;
+    top: 6%;
+    right: 6%;
+    border: black 1px solid;
+}
