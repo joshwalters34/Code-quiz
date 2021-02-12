@@ -1,20 +1,29 @@
+:root {
+    --text-color: #000080
+}
+
+body {
+    background-color: rgb(101, 207, 243);
+}
+
 #page{
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
-    border: black 1px solid;
+    background-color: #59c3f0;
 }
 
 #main-section {
     position: absolute;
-    border: black 1px solid;
     top: 100px;
+    left: 300px;
     width: 50%;
-    align-content: center;
-    
+    text-align: center;
+    background-color: #f5f5f5;   
+    color: var(--text-color);
 }
 
 button {
-    background-color: #0000ff;
+    background-color: var(--text-color);
     color: #ffffff;
     border-radius: 5%;
     border-style: none;
@@ -26,14 +35,13 @@ button {
 #scores {
     position: absolute;
     top: 6%;
-    left: 6%;
-    border: black 1px solid;
-    
+    left: 3%;
+    color: var(--text-color);
 }
 
 #time {
     position: absolute;
     top: 6%;
-    right: 6%;
-    border: black 1px solid;
+    right: 3%;
+    color: var(--text-color)
 }
