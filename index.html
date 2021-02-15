@@ -9,16 +9,66 @@
   </head>
   <body>
       <div id = "page">
-        <h3 id = "scores">View High Scores</h3>
-        <h3 id = "time">Time: </h3>
+        <section id = "header">
+          <h3 id = "scores">View High Scores</h3>
+          <h3 id = "time">Time:<span id= "countdown">45</span> </h3>
+        </section>
         <div id = "main-section">
-          <h1>Coding Quiz challenge</h1>
-          <p> Try to answer the following code related questions within the time limit.  
+          <h1 id = "main-head">Coding Quiz challenge</h1>
+          <p id = "savedScore"> Try to answer the following code related questions within the time limit.  
             Keep in mind that incorrect answers will penalize your scrore/time by
             10 seconds
           </p>
           <button id = "start">Start Quiz</button>
         </div>
+        <div id = "highScore">
+          <h1 id = "scoreHeader">High Scores<h1>
+          <p id = "savedScore">Scores go here</p>
+          <button id = "goBack">Go Back</button>
+          <button id = "clear">Clear Scores</button>
+        </div>
+        <div id = "question1">
+          <p class = "questionP">Arrays in Javascript can be used to store?</p>
+          <ol>
+            <li><button>Strings</button></li>
+            <li><button>Numbers</button></li>
+            <li><button>Boolean Values</button></li>
+            <li><button>All of the above</button></li>
+          </ul>
+        </div>
+
+        <div id = "question2">
+          <p class = "questionP">AThe condition in an if/else statement is encolsed with?</p>
+          <ol>
+            <li><button>Quotes</button></li>
+            <li><button>Curly Brackets</button></li>
+            <li><button>Parenthesis</button></li>
+            <li><button>Square Brackets</button></li>
+          </ul>
+        </div>
+
+        <div id = "question3">
+          <p class = "questionP">Commonly use data types DO NOT include?</p>
+          <ol>
+            <li><button>Strings</button></li>
+            <li><button>Alerts</button></li>
+            <li><button>Boolean Values</button></li>
+            <li><button>Numbers</button></li>
+          </ul>
+        </div>
+
+        <div id = "question4">
+          <p class = "questionP">A very useful tool used during development and debugging for printing
+                          content to the debugger is?
+          </p>
+          <ol>
+            <li><button>JavaScript</button></li>
+            <li><button>Terminal/Bash</button></li>
+            <li><button>For loops</button></li>
+            <li><button>Console log</button></li>
+          </ul>
+        </div>
+        
   
       </div>
     
