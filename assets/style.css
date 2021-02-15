@@ -94,3 +94,12 @@ button {
     left: 350px;
     width: 50%;
 }
+
+#question2 {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: absolute;
+    top: 100px;
+    left: 350px;
+    width: 50%;  
+}
