@@ -23,43 +23,44 @@
         </div>
         <div id = "highScore">
           <h1 id = "scoreHeader">High Scores<h1>
-          <p id = "savedScore">Scores go here</p>
+          <p id = "savedHighScore">Scores go here</p>
           <button id = "goBack">Go Back</button>
           <button id = "clear">Clear Scores</button>
         </div>
-        <div id = "question1">
+        <div id = "question1" class = "question">
           <p class = "questionP">Arrays in Javascript can be used to store?</p>
           <ol>
-            <li><button>Strings</button></li>
-            <li><button>Numbers</button></li>
-            <li><button>Boolean Values</button></li>
+            <li><button class="incorrectBtn">Strings</button></li>
+            <li><button class="incorrectBtn">Numbers</button></li>
+            <li><button class ="incorrectBtn">Boolean Values</button></li>
             <li><button id = "answer1Btn">All of the above</button></li>
           </ul>
-          <p class = "answerDisplay"> Answer will go here</p>
+          <p class = "answerDisplay"> </p>
         </div>
 
-        <div id = "question2">
-          <p class = "questionP">AThe condition in an if/else statement is encolsed with?</p>
+        <div id = "question2" class = "question">
+          <p class = "questionP">The condition in an if/else statement is encolsed with?</p>
           <ol>
             <li><button>Quotes</button></li>
-            <li><button>Curly Brackets</button></li>
+            <li><button id = "answer2Btn">Curly Brackets</button></li>
             <li><button>Parenthesis</button></li>
             <li><button>Square Brackets</button></li>
           </ul>
-          <p class = "answerDisplay"> Answer will go here</p>
+          <p class = "answerDisplay2"> </p>
         </div>
 
-        <div id = "question3">
+        <div id = "question3" class = "question">
           <p class = "questionP">Commonly use data types DO NOT include?</p>
           <ol>
             <li><button>Strings</button></li>
-            <li><button>Alerts</button></li>
+            <li><button id = "answer3Btn">Alerts</button></li>
             <li><button>Boolean Values</button></li>
             <li><button>Numbers</button></li>
           </ul>
+          <p class = "answerDisplay3"> </p>
         </div>
 
-        <div id = "question4">
+        <div id = "question4" class = "question">
           <p class = "questionP">A very useful tool used during development and debugging for printing
                           content to the debugger is?
           </p>
@@ -67,10 +68,19 @@
             <li><button>JavaScript</button></li>
             <li><button>Terminal/Bash</button></li>
             <li><button>For loops</button></li>
-            <li><button>Console log</button></li>
+            <li><button id = "answer4Btn">Console log</button></li>
           </ul>
+          <p class = "answerDisplay4"> </p>
         </div>
-        
+        <div id = "finalScreen" class = "question">
+          <h1> Congratulations!! You Win!!</h1>
+          <p id = "timeLeft"> Score goes here</p>
+          <form method="post">
+            <label for="intials">Enter your intials</label>
+            <input type="initials" name= password id="initials" placeholder="initals" />
+            <input id ="submitBtn" type="submit" value="Submit">
+          </form>
+        </div>
   
       </div>
     
