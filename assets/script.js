@@ -181,10 +181,10 @@ function finalWindow() {
 submitBtn.addEventListener("click", function() {
 
   timerEl.textContent = secondsLeft;
-  // localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
+  localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
 
-  var newHighScore = [];
-  var userSubmit = localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
+  // var newHighScore = [];
+  // var userSubmit = localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
 
-  newHighScore.push(userSubmit);
+  // newHighScore.push(userSubmit);
 })
