@@ -183,6 +183,8 @@ submitBtn.addEventListener("click", function() {
   timerEl.textContent = secondsLeft;
   localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
 
+  location.reload();
+
   // var newHighScore = [];
   // var userSubmit = localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
 
