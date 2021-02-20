@@ -168,7 +168,7 @@ answerFourBtn.addEventListener("click", function(){
   answer4El.textContent = "Correct";
   answerFourBtn.style.backgroundColor = "#008000";
   setTimeout(function() {finalWindow(); }, 500);
-  // finalWindow();
+
 })
 function finalWindow() {
   document.getElementById("question4").style.display = "none"; 
@@ -179,16 +179,12 @@ function finalWindow() {
 }
 
 submitBtn.addEventListener("click", function() {
-
-  timerEl.textContent = secondsLeft;
+  
+  // timerEl.textContent = secondsLeft;
   localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
 
-  scores();
-
-  // location.reload();
-
-  // var newHighScore = [];
-  // var userSubmit = localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
-
-  // newHighScore.push(userSubmit);
+  document.getElementById("main-section").style.visibility = "visible";
+  document.getElementById("main-head").style.visibility = "visible";
+  document.getElementById("savedScore").style.visibility = "visible";
+  document.getElementById("start").style.visibility = "visible";
 })
