@@ -74,6 +74,11 @@ button, #submitBtn {
     margin-bottom: 50px;
 }
 
+#savedHighScore {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 #goBack {
     margin-right: 20px;
 }

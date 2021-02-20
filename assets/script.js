@@ -14,8 +14,14 @@ var answerTwoBtn = document.querySelector("#answer2Btn");
 var answerThreeBtn = document.querySelector("#answer3Btn");
 var answerFourBtn = document.querySelector("#answer4Btn");
 var finalScreen = document.querySelector("#finalScreen");
-var incorrectBtn = document.querySelector(".incorrectBtn");
-var answerEl = document.querySelector(".answerDisplay");
+var incorrectBtn = document.querySelectorAll(".incorrectBtn");
+var incorrectBtn2 = document.querySelectorAll(".incorrectBtn2");
+var incorrectBtn3 = document.querySelectorAll(".incorrectBtn3");
+var incorrectBtn4 = document.querySelectorAll(".incorrectBtn4");
+var answerEl = document.querySelector("#answerDisplay");
+var answerEl2 = document.querySelector("#answerDisplay2");
+var answerEl3 = document.querySelector("#answerDisplay3");
+var answerEl4 = document.querySelector("#answerDisplay4");
 var LOCAL_STORAGE_SCORE = "highScore";
 var initialsEl = document.querySelector("#initials");
 var submitBtn = document.querySelector("#submitBtn");
@@ -74,9 +80,6 @@ function getScore () {
 document.getElementById("savedHighScore").innerHTML = results;
 }
 
-
-// console.log(localStorage.getItem("highScore"));
-
 function scores(){
   document.getElementById("main-section").style.display = "none"; 
   document.getElementById("highScore").style.visibility = "visible";
@@ -84,10 +87,7 @@ function scores(){
   document.getElementById("savedScore").style.visibility = "visible"; 
   document.getElementById("goBack").style.visibility = "visible"; 
   document.getElementById("clear").style.visibility = "visible"; 
-
 }
-
-
 
 // event listener on Go Back button to take user back to start page
 goBackBtn.addEventListener("click", function() {
@@ -100,56 +100,73 @@ clearBtn.addEventListener("click", function() {
   getScore();
 })
 
-incorrectBtn.addEventListener("click", function(event) {
-  var targetBtn = event.target;
-  answerEl.textContent = "Incorrect"
-  targetBtn.style.backgroundColor = "#DC143C"
-  setTimeout(function() {questionTwo(); }, 500);
-  
-  timerInterval = setInterval(function() {
-    secondsLeft-10;
-    timerEl.textContent = secondsLeft;
-  }, 1000);
-}
-)
+// the next 4 code blocks are for my incorrect answers
+incorrectBtn.forEach((incorrectBtn) => {
+  incorrectBtn.addEventListener("click", (event) => {
+    answerEl.textContent = "Incorrect"
+    incorrectBtn.style.backgroundColor = "#DC143C"
+    setTimeout(function() {questionTwo(); }, 500);
+  });
+});
 
-// event listener for answer to question 2
+incorrectBtn2.forEach((incorrectBtn2) => {
+  incorrectBtn2.addEventListener("click", (event) => {
+    answerEl2.textContent = "Incorrect"
+    incorrectBtn2.style.backgroundColor = "#DC143C"
+    setTimeout(function() {questionThree(); }, 500);
+  });
+});
+
+incorrectBtn3.forEach((incorrectBtn3) => {
+  incorrectBtn3.addEventListener("click", (event) => {
+    answerEl3.textContent = "Incorrect"
+    incorrectBtn3.style.backgroundColor = "#DC143C"
+    setTimeout(function() {questionFour(); }, 500);
+  });
+});
+
+incorrectBtn4.forEach((incorrectBtn4) => {
+  incorrectBtn4.addEventListener("click", (event) => {
+    clearInterval(timerInterval);
+
+    answerEl4.textContent = "Incorrect"
+    incorrectBtn4.style.backgroundColor = "#DC143C"
+    setTimeout(function() {finalWindow(); }, 500);
+  });
+});
+
+// event listener for answer to question 1
 answerOneBtn.addEventListener("click", function(){
   
-
   answerEl.textContent = "Correct";
   answerOneBtn.style.backgroundColor = "#008000";
   setTimeout(function() {questionTwo(); }, 500);// delays next function so that you can see the correct text
-  // questionTwo();
 })
 
 function questionTwo() {
   document.getElementById("question1").style.display = "none"; 
   document.getElementById("question2").style.visibility = "visible"; 
-  // if (answerOneBtn) {
-  //   window.alert = "Correct"
-  // }
 }
 
-// event listerner for answer to question 3
+// event listerner for answer to question 2
 answerTwoBtn.addEventListener("click", function(){
-  var answer2El = document.querySelector(".answerDisplay2");
+  // var answerEl = document.querySelector(".answerDisplay2");
 
-  answer2El.textContent = "Correct";
+  answerEl2.textContent = "Correct";
   answerTwoBtn.style.backgroundColor = "#008000";
   setTimeout(function() {questionThree(); }, 500);
-  // questionThree();
 })
+
 function questionThree() {
   document.getElementById("question2").style.display = "none"; 
   document.getElementById("question3").style.visibility = "visible"; 
 }
 
-// event listerner for answer to question 4
+// event listerner for answer to question 3
 answerThreeBtn.addEventListener("click", function(){
-  var answer3El = document.querySelector(".answerDisplay3");
+  // var answer3El = document.querySelector(".answerDisplay3");
 
-  answer3El.textContent = "Correct";
+  answerEl3.textContent = "Correct";
   answerThreeBtn.style.backgroundColor = "#008000";
   setTimeout(function() {questionFour(); }, 500);
   // questionFour();
@@ -159,13 +176,11 @@ function questionFour() {
   document.getElementById("question4").style.visibility = "visible"; 
 }
 
-// even listener for final screen to enter high score
+// even listener for question 4
 answerFourBtn.addEventListener("click", function(){
   clearInterval(timerInterval);
 
-  var answer4El = document.querySelector(".answerDisplay4");
-
-  answer4El.textContent = "Correct";
+  answerEl4.textContent = "Correct";
   answerFourBtn.style.backgroundColor = "#008000";
   setTimeout(function() {finalWindow(); }, 500);
 
@@ -180,7 +195,6 @@ function finalWindow() {
 
 submitBtn.addEventListener("click", function() {
   
-  // timerEl.textContent = secondsLeft;
   localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
 
   document.getElementById("main-section").style.visibility = "visible";
@@ -188,3 +202,4 @@ submitBtn.addEventListener("click", function() {
   document.getElementById("savedScore").style.visibility = "visible";
   document.getElementById("start").style.visibility = "visible";
 })
+
