@@ -55,13 +55,6 @@ function startGame() {
   timerInterval = setInterval(function() {
     secondsLeft--;
     timerEl.textContent = secondsLeft;
-
-    if(secondsLeft === 0) {
-      window.alert("Game Over.  Better luck next time!");
-      location.reload(); //reloads the page after clicking OK on prompt
-      // Stops execution of action at set interval
-      clearInterval(timerInterval);
-    }
   }, 1000);
   // hiding the main page elements to display questions
   document.getElementById("main-section").style.display = "none"; 
@@ -100,11 +93,20 @@ clearBtn.addEventListener("click", function() {
   getScore();
 })
 
+
 // the next 4 code blocks are for my incorrect answers
 incorrectBtn.forEach((incorrectBtn) => {
   incorrectBtn.addEventListener("click", (event) => {
     answerEl.textContent = "Incorrect"
-    incorrectBtn.style.backgroundColor = "#DC143C"
+    secondsLeft -= 5;
+    incorrectBtn.style.backgroundColor = "#DC143C";
+
+    if(secondsLeft <= 0) {
+      window.alert("Game Over.  Better luck next time!");
+      location.reload(); 
+
+      clearInterval(timerInterval);}
+
     setTimeout(function() {questionTwo(); }, 500);
   });
 });
@@ -112,7 +114,15 @@ incorrectBtn.forEach((incorrectBtn) => {
 incorrectBtn2.forEach((incorrectBtn2) => {
   incorrectBtn2.addEventListener("click", (event) => {
     answerEl2.textContent = "Incorrect"
+    secondsLeft -= 5;
     incorrectBtn2.style.backgroundColor = "#DC143C"
+
+    if(secondsLeft <= 0) {
+      window.alert("Game Over.  Better luck next time!");
+      location.reload(); 
+      
+      clearInterval(timerInterval);}
+
     setTimeout(function() {questionThree(); }, 500);
   });
 });
@@ -120,7 +130,14 @@ incorrectBtn2.forEach((incorrectBtn2) => {
 incorrectBtn3.forEach((incorrectBtn3) => {
   incorrectBtn3.addEventListener("click", (event) => {
     answerEl3.textContent = "Incorrect"
+    secondsLeft -= 5;
     incorrectBtn3.style.backgroundColor = "#DC143C"
+
+    if(secondsLeft <= 0) {
+      window.alert("Game Over.  Better luck next time!");
+      location.reload(); 
+      
+      clearInterval(timerInterval);}
     setTimeout(function() {questionFour(); }, 500);
   });
 });
@@ -130,7 +147,15 @@ incorrectBtn4.forEach((incorrectBtn4) => {
     clearInterval(timerInterval);
 
     answerEl4.textContent = "Incorrect"
+    secondsLeft -= 5;
     incorrectBtn4.style.backgroundColor = "#DC143C"
+
+    if(secondsLeft <= 0) {
+      window.alert("Game Over.  Better luck next time!");
+      location.reload(); 
+      
+      clearInterval(timerInterval);}
+      
     setTimeout(function() {finalWindow(); }, 500);
   });
 });
@@ -146,6 +171,12 @@ answerOneBtn.addEventListener("click", function(){
 function questionTwo() {
   document.getElementById("question1").style.display = "none"; 
   document.getElementById("question2").style.visibility = "visible"; 
+  if(secondsLeft === 0) {
+    window.alert("Game Over.  Better luck next time!");
+    location.reload(); //reloads the page after clicking OK on prompt
+    // Stops execution of action at set interval
+    clearInterval(timerInterval);
+  }
 }
 
 // event listerner for answer to question 2
@@ -203,3 +234,10 @@ submitBtn.addEventListener("click", function() {
   document.getElementById("start").style.visibility = "visible";
 })
 
+// var scoreArray = [];
+// var playerScore = {
+//   score: secondsLeft,
+//   initials: initialsEl
+// };
+
+// scoreArray.push(playerScore)
