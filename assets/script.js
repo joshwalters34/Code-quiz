@@ -48,7 +48,7 @@ startBtn.addEventListener("click", function() {
   startGame();
 }
 );
-var secondsLeft = 25
+var secondsLeft = 45
 
 // function for the timer to run
 function startGame() {
@@ -98,7 +98,7 @@ clearBtn.addEventListener("click", function() {
 incorrectBtn.forEach((incorrectBtn) => {
   incorrectBtn.addEventListener("click", (event) => {
     answerEl.textContent = "Incorrect"
-    secondsLeft -= 5;
+    secondsLeft -= 10;
     incorrectBtn.style.backgroundColor = "#DC143C";
 
     if(secondsLeft <= 0) {
@@ -114,7 +114,7 @@ incorrectBtn.forEach((incorrectBtn) => {
 incorrectBtn2.forEach((incorrectBtn2) => {
   incorrectBtn2.addEventListener("click", (event) => {
     answerEl2.textContent = "Incorrect"
-    secondsLeft -= 5;
+    secondsLeft -= 10;
     incorrectBtn2.style.backgroundColor = "#DC143C"
 
     if(secondsLeft <= 0) {
@@ -130,7 +130,7 @@ incorrectBtn2.forEach((incorrectBtn2) => {
 incorrectBtn3.forEach((incorrectBtn3) => {
   incorrectBtn3.addEventListener("click", (event) => {
     answerEl3.textContent = "Incorrect"
-    secondsLeft -= 5;
+    secondsLeft -= 10;
     incorrectBtn3.style.backgroundColor = "#DC143C"
 
     if(secondsLeft <= 0) {
@@ -147,7 +147,7 @@ incorrectBtn4.forEach((incorrectBtn4) => {
     clearInterval(timerInterval);
 
     answerEl4.textContent = "Incorrect"
-    secondsLeft -= 5;
+    secondsLeft -= 10;
     incorrectBtn4.style.backgroundColor = "#DC143C"
 
     if(secondsLeft <= 0) {
@@ -155,7 +155,7 @@ incorrectBtn4.forEach((incorrectBtn4) => {
       location.reload(); 
       
       clearInterval(timerInterval);}
-      
+
     setTimeout(function() {finalWindow(); }, 500);
   });
 });
@@ -224,8 +224,13 @@ function finalWindow() {
   timeLeft.textContent = "Your score is " + secondsLeft;
 }
 
+
+                                                
+
 submitBtn.addEventListener("click", function() {
   
+  
+
   localStorage.setItem(LOCAL_STORAGE_SCORE, initialsEl.value + " - " + secondsLeft);
 
   document.getElementById("main-section").style.visibility = "visible";
@@ -234,10 +239,12 @@ submitBtn.addEventListener("click", function() {
   document.getElementById("start").style.visibility = "visible";
 })
 
-// var scoreArray = [];
-// var playerScore = {
-//   score: secondsLeft,
-//   initials: initialsEl
-// };
 
-// scoreArray.push(playerScore)
+
+// var scoreArray = [];
+//  var LOCAL_STORAGE_SCORE = {
+//   score: secondsLeft,
+//   initials: initialsEl.innerHTML,
+//   localStorage.setItem(LOCAL_STORAGE_SCORE, JSON.stringify(scoreArray));
+//   scoreArray.push(playerScore);
+// };   
